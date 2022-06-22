@@ -1,0 +1,29 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+//    def token = property("MAPBOX_DOWNLOADS_TOKEN") as String
+    def token = "sk.eyJ1IjoibW9oYW1tZWRpc3NhIiwiYSI6ImNrd2NneXU4dzFsdXoydXFtbHV6Y2xid3UifQ.tk7DaKuiW7Fz_V6pelJmmA"
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+        maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://api.mapbox.com/downloads/v2/releases/maven'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                // Do not change the username below.
+                // This should always be `mapbox` (not your username).
+                username = "mapbox"
+                // Use the secret token you stored in gradle.properties as the password
+//                password = rootProject.properties['MAPBOX_DOWNLOADS_TOKEN'] ?: ""
+                password = token
+            }
+        }
+    }
+}
+rootProject.name = "BedonWaseet"
+include ':app'

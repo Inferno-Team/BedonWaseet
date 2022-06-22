@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splash_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        tools:layout="@layout/splash_activity"
+        android:id="@+id/homeFragment"
+        android:name="com.inferno.mobile.bedon_waseet.ui.splash.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.inferno.mobile.bedon_waseet.ui.splash.login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.inferno.mobile.bedon_waseet.ui.splash.signup.SignUpFragment"
+        android:label="signup_fragment"
+        tools:layout="@layout/signup_fragment" />
+</navigation>

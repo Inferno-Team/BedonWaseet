@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.inferno.mobile.bedon_waseet.ui.owner.edit_estate.EditEstateFragment"
+    tools:layoutDirection="rtl">
+
+    <HorizontalScrollView
+        android:id="@+id/image_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/img_real_estate"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:background="@drawable/img1" />
+
+                <com.mobven.progress.MBCircularProgressBar
+                    android:id="@+id/circle_progress"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    app:bgColor="#E0E0E0"
+                    app:fgColor="#3F51B5"
+                    app:max="100"
+
+
+                    app:min="0"
+                    app:progress="50"
+
+                    />
+
+                <ImageView
+                    android:id="@+id/edit_real_estate"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center"
+                    android:alpha=".75"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_baseline_edit_24"
+                    app:tint="@color/black" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/image360_container"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.exoplayer2.ui.PlayerView
+                    android:id="@+id/video360"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:surface_type="spherical_gl_surface_view"
+                    app:use_controller="false" />
+
+                <com.mobven.progress.MBCircularProgressBar
+                    android:id="@+id/circle_progress360"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    app:bgColor="#E0E0E0"
+                    app:fgColor="#3F51B5"
+                    app:max="100"
+
+
+                    app:min="0"
+                    app:progress="50"
+
+                    />
+
+                <ImageView
+                    android:id="@+id/edit360"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center"
+                    android:alpha=".75"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_baseline_edit_24"
+                    app:tint="@color/black" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/no_room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/there_is_no_available_room_yet"
+        android:textColor="@color/black"
+        android:textSize="19sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/image_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_container" />
+
+    <TextView
+        android:id="@+id/ava_room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="@string/available_room"
+        android:textColor="@color/black"
+        android:textSize="19sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/image_container"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_container"
+        app:layout_constraintVertical_bias="0" />
+
+    <ImageView
+        android:id="@+id/add_room"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:alpha="1"
+        android:elevation="16dp"
+        android:padding="4dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_anchorGravity="bottom|end"
+        app:layout_constraintBottom_toBottomOf="@id/ava_room"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.015"
+        app:layout_constraintStart_toEndOf="@id/ava_room"
+        app:layout_constraintTop_toTopOf="@id/ava_room"
+
+        app:tint="@color/black" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rooms"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="visible"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ava_room"
+        tools:listitem="@layout/room_item" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

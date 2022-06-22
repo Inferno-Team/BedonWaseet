@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.owner.add_real_estate.AddRealEstateFragment"
+    android:layoutDirection="ltr"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_card"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/top_card"
+        android:elevation="1dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".70"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01"
+        app:layout_constraintWidth_percent=".95">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/location_container"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:boxCornerRadiusTopEnd="24dp"
+            app:boxCornerRadiusTopStart="24dp"
+            app:layout_constraintVertical_bias=".05"
+            app:layout_constraintWidth_percent=".85">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/location_field"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/location"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/price_container"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/location_container"
+            app:layout_constraintTop_toBottomOf="@id/direction_container"
+            app:layout_constraintVertical_bias=".02"
+
+            app:layout_constraintWidth_percent=".42">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/price_field"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/price"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/type_container"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/location_container"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@id/direction_container"
+            app:layout_constraintTop_toTopOf="@id/direction_container"
+            app:layout_constraintVertical_bias=".0"
+            app:layout_constraintWidth_percent=".42">
+
+            <AutoCompleteTextView
+                android:id="@+id/type_field"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/real_estate_type"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/direction_container"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/location_container"
+            app:layout_constraintTop_toBottomOf="@id/location_container"
+            app:layout_constraintVertical_bias=".02"
+
+            app:layout_constraintWidth_percent=".42">
+
+            <AutoCompleteTextView
+                android:id="@+id/direction_field"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/direction"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/area_container"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/location_container"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@id/price_container"
+            app:layout_constraintTop_toTopOf="@id/price_container"
+            app:layout_constraintVertical_bias=".0"
+            app:layout_constraintWidth_percent=".42">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/area_field"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/area"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_card"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bottom_card"
+        android:elevation="2dp"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/top_card"
+        app:layout_constraintVertical_bias="0.95"
+        app:layout_constraintWidth_percent=".95">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/buy_type_container"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias=".5"
+            app:layout_constraintWidth_percent=".55">
+
+            <AutoCompleteTextView
+                android:id="@+id/buy_type_field"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/buy_type"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lat_container"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+
+            app:layout_constraintStart_toEndOf="@id/long_container"
+            app:layout_constraintTop_toBottomOf="@id/buy_type_container"
+            app:layout_constraintVertical_bias="0.12"
+            app:layout_constraintWidth_percent=".40">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/lat_field"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/lat"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/long_container"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/lat_container"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/buy_type_container"
+            app:layout_constraintVertical_bias="0.12"
+            app:layout_constraintWidth_percent=".40">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/long_field"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/_long"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/map"
+        android:elevation="3dp"
+        app:backgroundTint="#DBB1FF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/bottom_card"
+        app:layout_constraintStart_toStartOf="@id/bottom_card"
+        app:srcCompat="@drawable/ic_baseline_add_24"
+        app:tint="@color/white" />
+</androidx.constraintlayout.widget.ConstraintLayout>

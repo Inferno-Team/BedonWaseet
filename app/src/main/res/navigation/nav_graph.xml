@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment2">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.inferno.mobile.bedon_waseet.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_nav_home_to_estateDetailsFragment"
+            app:destination="@id/estateDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.inferno.mobile.bedon_waseet.ui.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/settings_layout" />
+    <fragment
+        android:id="@+id/nav_my_states"
+        tools:layout="@layout/my_real_estate_fragment"
+        android:name="com.inferno.mobile.bedon_waseet.ui.owner.my_realestates.MyRealEstatesFragment"
+        android:label="MyRealEstatesFragment" >
+        <action
+            android:id="@+id/action_nav_my_states_to_addRealEstateFragment"
+            app:destination="@id/addRealEstateFragment" />
+        <action
+            android:id="@+id/action_nav_my_states_to_editEstateFragment"
+            app:destination="@id/editEstateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRealEstateFragment"
+        tools:layout="@layout/add_real_estate_fragment"
+        android:name="com.inferno.mobile.bedon_waseet.ui.owner.add_real_estate.AddRealEstateFragment"
+        android:label="AddRealEstateFragment" />
+    <fragment
+        tools:layout="@layout/estate_edit_layout"
+        android:id="@+id/editEstateFragment"
+        android:name="com.inferno.mobile.bedon_waseet.ui.owner.edit_estate.EditEstateFragment"
+        android:label="EditEstateFragment" >
+        <argument
+            android:name="estate"
+            app:argType="com.inferno.mobile.bedon_waseet.responses.RealEstate"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/estateDetailsFragment"
+        android:name="com.inferno.mobile.bedon_waseet.ui.estate_details.EstateDetailsFragment"
+        android:label="EstateDetailsFragment" >
+        <argument
+            android:name="estate"
+            app:argType="com.inferno.mobile.bedon_waseet.responses.RealEstate"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/main_home_layout"
+        android:id="@+id/homeFragment2"
+        android:name="com.inferno.mobile.bedon_waseet.ui.home.HomeFragment2"
+        android:label="HomeFragment2" >
+        <action
+            android:id="@+id/action_homeFragment2_to_estateDetailsFragment"
+            app:destination="@id/estateDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_filteredRealEstate"
+            app:destination="@id/filteredRealEstate" />
+    </fragment>
+    <fragment
+        android:id="@+id/filteredRealEstate"
+        android:name="com.inferno.mobile.bedon_waseet.ui.filtered_real_estate.FilteredRealEstateFragment"
+        android:label="FilteredRealEstate" >
+        <argument
+            android:name="buy_type"
+            app:argType="string" />
+        <argument
+            android:name="estate_type"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_filteredRealEstate_to_estateDetailsFragment"
+            app:destination="@id/estateDetailsFragment" />
+        <argument
+            android:name="filter_set"
+            app:argType="java.util.ArrayList" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="com.inferno.mobile.bedon_waseet.ui.map.MapFragment"
+        android:label="MapFragment" />
+</navigation>

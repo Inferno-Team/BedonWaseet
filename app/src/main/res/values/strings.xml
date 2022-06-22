@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">بدون وسيط</string>
+    <string name="file_path">%1$s/360.mp4</string>
+    <string name="home">الرئيسية</string>
+    <string name="map">خريطة</string>
+    <string name="settings">الإعدادات</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoibW9oYW1tZWRpc3NhIiwiYSI6ImNrd2NnajFvaDEycGkydXFsdmRxaW1wNm4ifQ.9isSyfCXqGrAN2-AjM46hA</string>
+    <string name="my_real_estate">عقاراتي</string>
+    <string name="location">موقع</string>
+    <string name="price">السعر</string>
+    <string name="real_estate_type">نوع العقار</string>
+    <string name="_long">خط الطول</string>
+    <string name="lat">خط العرض</string>
+    <string name="buy_type">نوع الشراء</string>
+    <string name="direction">الاتجاه</string>
+    <string name="area">المساحة</string>
+    <string name="there_is_no_available_room_yet">لا يوجد غرف</string>
+    <string name="available_room">الغرف المتوفرة</string>
+    <string name="room_name">اسم الغرفة</string>
+    <string name="find_your_best_home">اوجد منزلك\nالمفضل</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="sign_up">انشاء حساب</string>
+    <string name="email">بريد الالكتروني</string>
+    <string name="password">كلمة السر</string>
+    <string name="username">اسم المستخدم</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="real_estate_owner">هل انت صاحب عقار ؟</string>
+</resources>
