@@ -3,30 +3,36 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/drawable-v24/ic_splash_screen_background.xml" value="0.1285" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/drawable/border_color.xml" value="0.154" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/drawable/filter_top_layout_box_shadow.xml" value="0.1025" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/drawable/ic_appillustration.xml" value="0.1" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/drawable/ic_baseline_house_siding_24.xml" value="0.1455" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/drawable/ic_login_container.xml" value="0.132" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/drawable/ic_splash_screen_background.xml" value="0.1455" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/drawable/mapbox_user_icon_shadow.xml" value="0.109" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/drawable/mapbox_user_puck_icon.xml" value="0.164" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/activity_main.xml" value="0.20885416666666667" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/add_real_estate_fragment.xml" value="0.209375" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/estate_details_fragment.xml" value="0.209375" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/estate_edit_layout.xml" value="0.17962962962962964" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/estate_edit_layout.xml" value="0.19537037037037036" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/filter_layout.xml" value="0.15462962962962962" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/home_fragment.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/image360fragment.xml" value="0.20885416666666667" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/item_callout_view.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/login_fragment.xml" value="0.20185185185185187" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/main_home_layout.xml" value="0.2037037037037037" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/main_home_layout.xml" value="0.19537037037037036" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/map_fragment.xml" value="0.209375" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/my_real_estate_fragment.xml" value="0.209375" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/my_real_estate_fragment.xml" value="0.19537037037037036" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/real_estate_item.xml" value="0.209375" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/real_estate_type_item.xml" value="0.67" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/real_estate_type_item.xml" value="0.19537037037037036" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/room_image_item.xml" value="0.209375" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/room_item.xml" value="0.209375" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/settings_layout.xml" value="0.19537037037037036" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/signup_fragment.xml" value="0.209375" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/splash_activity.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/splash_activity.xml" value="0.18" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/splash_activity_layout.xml" value="0.20564102564102565" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/video_player_layour.xml" value="0.18703703703703703" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/layout/what_looking_for_item.xml" value="0.20885416666666667" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/menu/nav_menu.xml" value="0.175" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BedonWaseet2/app/src/main/res/menu/owner_nav_menu.xml" value="0.20564102564102565" />

@@ -1,21 +1,19 @@
 package com.inferno.mobile.bedon_waseet.ui.estate_details
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
-import androidx.viewbinding.ViewBindings
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.google.android.exoplayer2.C
 import com.google.android.exoplayer2.ExoPlayer
@@ -25,7 +23,6 @@ import com.google.android.exoplayer2.source.ProgressiveMediaSource
 import com.google.android.exoplayer2.ui.spherical.SphericalGLSurfaceView
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.material.appbar.AppBarLayout
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.inferno.mobile.bedon_waseet.BaseApplication
 import com.inferno.mobile.bedon_waseet.R
 import com.inferno.mobile.bedon_waseet.activities.MainActivity
@@ -36,7 +33,7 @@ import kotlin.math.abs
 
 class EstateDetailsFragment : Fragment() {
     private lateinit var binding: EstateDetailsFragmentBinding
-    private lateinit var player: ExoPlayer
+    private var player: ExoPlayer? = null
     private val viewModel: EstateDetailsViewModel by viewModels()
     private lateinit var url: String
 
@@ -49,6 +46,7 @@ class EstateDetailsFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         (requireActivity() as MainActivity).viewBinding.bottomNavView.visibility = View.GONE
+        player = SimpleExoPlayer.Builder(requireContext()).build()
         binding.video360.onResume()
     }
 
@@ -78,11 +76,11 @@ class EstateDetailsFragment : Fragment() {
             })
 
         binding.fullScreen.setOnClickListener {
-//            val bundle = Bundle()
+            val bundle = Bundle()
 
-//            bundle.putString("url", url)
-//            findNavController()
-//                .navigate(R.id.action_estateDetailsFragment_to_image360Fragment, bundle)
+            bundle.putString("url", url)
+            findNavController()
+                .navigate(R.id.action_estateDetailsFragment_to_image360Fragment, bundle)
         }
 
         val estate = requireArguments().getSerializable("estate") as RealEstate
@@ -90,6 +88,15 @@ class EstateDetailsFragment : Fragment() {
             .setDefaultStereoMode(C.STEREO_MODE_LEFT_RIGHT)
 
         viewModel.getEstateDetails(estate.id).observe(requireActivity(), this::realEstateDetails)
+        binding.shareButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SEND)
+            val shareText = "Estate Owner Name : " + estate.owner.name +
+                    "\n" + "Estate Type : " + estate.stateType.name +
+                    "\n" + "Link : http://127.0.0.1/estate?id=" + estate.id
+            intent.putExtra(Intent.EXTRA_TEXT, shareText)
+            intent.type = "text/plain"
+            startActivity(Intent.createChooser(intent, "Share Via"))
+        }
         return binding.root
     }
 
@@ -118,8 +125,21 @@ class EstateDetailsFragment : Fragment() {
             )
             .transform(CircleCrop())
             .into(binding.userLogo)
-        val adapter = RealEstateRoomAdapter(realEstate.rooms!!,false)
+        val adapter = RealEstateRoomAdapter(realEstate.rooms!!, false)
         binding.rooms.adapter = adapter
+        binding.contactButton.setOnClickListener {
+            if (realEstate.owner.phone != null) {
+                val intent = Intent(Intent.ACTION_DIAL)
+                intent.data = Uri.parse("tel:" + realEstate.owner.phone)
+                startActivity(intent)
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "هذا المالك لا يملك رقم هاتف", Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+
     }
 
     private fun buildMediaSource(uri: Uri): MediaSource {
@@ -131,11 +151,10 @@ class EstateDetailsFragment : Fragment() {
     }
 
     private fun initializePlayer() {
-        player = SimpleExoPlayer.Builder(requireContext()).build()
 
         val uri = Uri.parse(url)
         val mediaSource = buildMediaSource(uri)
-        player.prepare(mediaSource)
+        player?.prepare(mediaSource)
 
         binding.video360.player = player
 //        binding.video360.onResume()
@@ -143,12 +162,13 @@ class EstateDetailsFragment : Fragment() {
 
     private fun releasePlayer() {
         binding.video360.onPause()
-        player.release()
+        player?.release()
 
     }
 
     override fun onStop() {
-        super.onStop()
         releasePlayer()
+        super.onStop()
+
     }
 }

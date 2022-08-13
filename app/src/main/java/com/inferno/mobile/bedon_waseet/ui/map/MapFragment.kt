@@ -21,6 +21,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.MutableLiveData
+import androidx.navigation.fragment.findNavController
 import com.inferno.mobile.bedon_waseet.R
 import com.inferno.mobile.bedon_waseet.databinding.ItemCalloutViewBinding
 import com.inferno.mobile.bedon_waseet.databinding.MapFragmentBinding
@@ -148,6 +149,13 @@ class MapFragment : Fragment() {
                         R.drawable.ic_marker
                     )
                 )
+            RealEstateType.منزل ->
+                bitmap = convertDrawableToBitmap(
+                    AppCompatResources.getDrawable(
+                        requireContext(),
+                        R.drawable.ic_baseline_house_siding_24
+                    )
+                )
             else -> bitmap = convertDrawableToBitmap(
                 AppCompatResources.getDrawable(
                     requireContext(),
@@ -160,15 +168,18 @@ class MapFragment : Fragment() {
             .withIconImage(bitmap!!)
         pointAnnotationManager.create(circleAnnotationOptions)
         pointAnnotationManager.addClickListener {
-            Toast.makeText(requireContext(), estate.owner.name, Toast.LENGTH_SHORT).show()
-            val viewAnnotationManager = binding.mapView.viewAnnotationManager
-            val viewAnnotation = viewAnnotationManager.addViewAnnotation(
-                resId = R.layout.item_callout_view,
-                options = viewAnnotationOptions {
-                    geometry(point)
-                })
-            val _binding = ItemCalloutViewBinding.bind(viewAnnotation)
-            _binding.textNativeView.text = estate.owner.name
+//            Toast.makeText(requireContext(), estate.owner.name, Toast.LENGTH_SHORT).show()
+//            val viewAnnotationManager = binding.mapView.viewAnnotationManager
+//            val viewAnnotation = viewAnnotationManager.addViewAnnotation(
+//                resId = R.layout.item_callout_view,
+//                options = viewAnnotationOptions {
+//                    geometry(point)
+//                })
+//            val _binding = ItemCalloutViewBinding.bind(viewAnnotation)
+//            _binding.textNativeView.text = estate.owner.name
+            val bundle = Bundle()
+            bundle.putSerializable("estate",estate)
+            findNavController().navigate(R.id.action_nav_map_to_estateDetailsFragment,bundle)
             true
         }
 

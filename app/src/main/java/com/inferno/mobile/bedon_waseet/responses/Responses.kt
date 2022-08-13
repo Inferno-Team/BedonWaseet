@@ -20,7 +20,7 @@ data class User(
     @SerializedName("email")
     val email: String,
     @SerializedName("phone")
-    val phone: String,
+    val phone: String?,
     @SerializedName("type")
     val type: UserType,
     @SerializedName("rate")

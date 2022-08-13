@@ -48,6 +48,7 @@
             app:nullable="true" />
     </fragment>
     <fragment
+        tools:layout="@layout/estate_details_fragment"
         android:id="@+id/estateDetailsFragment"
         android:name="com.inferno.mobile.bedon_waseet.ui.estate_details.EstateDetailsFragment"
         android:label="EstateDetailsFragment" >
@@ -55,6 +56,9 @@
             android:name="estate"
             app:argType="com.inferno.mobile.bedon_waseet.responses.RealEstate"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_estateDetailsFragment_to_image360Fragment"
+            app:destination="@id/image360Fragment" />
     </fragment>
     <fragment
         tools:layout="@layout/main_home_layout"
@@ -69,6 +73,7 @@
             app:destination="@id/filteredRealEstate" />
     </fragment>
     <fragment
+        tools:layout="@layout/home_fragment"
         android:id="@+id/filteredRealEstate"
         android:name="com.inferno.mobile.bedon_waseet.ui.filtered_real_estate.FilteredRealEstateFragment"
         android:label="FilteredRealEstate" >
@@ -86,7 +91,22 @@
             app:argType="java.util.ArrayList" />
     </fragment>
     <fragment
+        tools:layout="@layout/map_fragment"
         android:id="@+id/nav_map"
         android:name="com.inferno.mobile.bedon_waseet.ui.map.MapFragment"
-        android:label="MapFragment" />
+        android:label="MapFragment" >
+        <action
+            android:id="@+id/action_nav_map_to_estateDetailsFragment"
+            app:destination="@id/estateDetailsFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/image360fragment"
+        android:id="@+id/image360Fragment"
+        android:name="com.inferno.mobile.bedon_waseet.ui.estate_details.image360.Image360Fragment"
+        android:label="Image360Fragment" >
+        <argument
+            android:name="url"
+            app:argType="string"
+            android:defaultValue='""' />
+    </fragment>
 </navigation>

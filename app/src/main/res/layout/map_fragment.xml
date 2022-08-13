@@ -18,8 +18,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHeight_percent="1"
-            mapbox:mapbox_cameraTargetLat="59.31"
-            mapbox:mapbox_cameraTargetLng="18.06"
+            mapbox:mapbox_cameraTargetLat="36.2117209"
+            mapbox:mapbox_cameraTargetLng="37.1110612"
             mapbox:mapbox_cameraZoom="9.0"
             app:layout_constraintVertical_bias="0" />
 

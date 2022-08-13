@@ -43,6 +43,7 @@
         android:layout_margin="2dp"
         android:background="@drawable/ic_baseline_add_24"
         android:padding="32dp"
+        android:backgroundTint="@color/purple_200"
         app:layout_constraintBottom_toBottomOf="@id/image_slider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"

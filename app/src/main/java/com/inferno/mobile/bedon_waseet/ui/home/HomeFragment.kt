@@ -20,7 +20,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        println("HomeFragment onCreate")
+
     }
 
     private lateinit var binding: HomeFragmentBinding
@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        println("HomeFragment onCreateView")
+
         binding = HomeFragmentBinding.inflate(inflater, container, false)
         val bottom = requireActivity().findViewById<BottomNavigationView>(R.id.bottom_nav_view)
         if (bottom != null)

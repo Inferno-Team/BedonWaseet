@@ -13,6 +13,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.slider.RangeSlider
+import com.inferno.mobile.bedon_waseet.BaseApplication
 import com.inferno.mobile.bedon_waseet.R
 import com.inferno.mobile.bedon_waseet.adapters.RealEstateAdapter
 import com.inferno.mobile.bedon_waseet.adapters.RealEstateItemClick
@@ -46,11 +47,11 @@ class HomeFragment2 : Fragment() {
 
         viewModel.getRecentRealEstate(token).observe(requireActivity(), this::recentRealEstate)
 //        viewModel.getRealEstateTypes(token).observe(requireActivity(),this::realEstateTypes)
-        val types = ArrayList<RealEstateType>()
-        types.add(RealEstateType.محل)
-        types.add(RealEstateType.ارض)
-        types.add(RealEstateType.شقة)
-        types.add(RealEstateType.منزل)
+        val types = ArrayList<Pair<String, RealEstateType>>()
+        types.add(Pair("${BaseApplication.BASE_URL}/storage/images/types/store.jpg", RealEstateType.محل))
+        types.add(Pair("${BaseApplication.BASE_URL}/storage/images/types/land.jpg", RealEstateType.ارض))
+        types.add(Pair("${BaseApplication.BASE_URL}/storage/images/types/flat.jpg", RealEstateType.شقة))
+        types.add(Pair("${BaseApplication.BASE_URL}/storage/images/types/house.png", RealEstateType.منزل))
         realEstateTypes(types)
 
         val buyTypes = ArrayList<BuyType>()
@@ -86,8 +87,10 @@ class HomeFragment2 : Fragment() {
             BuyType.استأجار.name,
             BuyType.رهن.name,
         )
-        val typeAdapter = ArrayAdapter(requireContext(),
-            R.layout.list_item, estateOptions)
+        val typeAdapter = ArrayAdapter(
+            requireContext(),
+            R.layout.list_item, estateOptions
+        )
         val directionAdapter = ArrayAdapter(requireContext(), R.layout.list_item, directionOptions)
         val buyAdapter = ArrayAdapter(requireContext(), R.layout.list_item, typeOptions)
         dialogBinding.directionField.setAdapter(directionAdapter)
@@ -189,12 +192,12 @@ class HomeFragment2 : Fragment() {
         }
     }
 
-    private fun realEstateTypes(types: ArrayList<RealEstateType>) {
+    private fun realEstateTypes(types: ArrayList<Pair<String, RealEstateType>>) {
         val adapter = TypesAdapter(types)
-        adapter.setOnTypeClickListener(object : RealEstateItemClick<RealEstateType> {
-            override fun onClick(item: RealEstateType) {
+        adapter.setOnTypeClickListener(object : RealEstateItemClick<Pair<String, RealEstateType>> {
+            override fun onClick(item: Pair<String, RealEstateType>) {
                 val bundle = Bundle()
-                bundle.putString("estate_type", item.name)
+                bundle.putString("estate_type", item.second.name)
                 findNavController().navigate(
                     R.id.action_homeFragment2_to_filteredRealEstate,
                     bundle
